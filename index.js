@@ -249,11 +249,20 @@ console.log(getDifference(new Set([1, 2, 3, 4]), new Set([2, 3])));
  */
 function getIntersection(arr1, arr2) {
   // Створення множин з двох масивів
+  const set1 = new Set(arr1);
+  const set2 = new Set(arr2);
   // Створення множини intersectionSet
+  const intersectionSet = new Set();
   // Перебір елементів першої множини за допомогою оператору for of
-  // Перевірка, чи елемент є спільним у другій множині
-  // Додавання спільного елементу до множини intersectionSet
+  for (let element of set1) {
+    // Перевірка, чи елемент є спільним у другій множині
+    if (set2.has(element)) {
+      // Додавання спільного елементу до множини intersectionSet
+      intersectionSet.add(element);
+    }
+  }
   // Повертаємо множину intersectionSet
+  return intersectionSet;
 }
 
 // Приклад використання функції getIntersection

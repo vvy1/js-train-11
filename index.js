@@ -278,14 +278,31 @@ console.log(getIntersection([1, 2, 3, 4], [3, 4, 5, 6]));
  */
 function iterateSet(set) {
   // Використовуємо методу keys для отримання ітератора ключів
+  const keys = set.keys();
+  console.log("Keys:");
   // Використовуємо for...of для кожного ключа з ітератора keys
-  // Виведення ключа у консоль
+  for (let key of keys) {
+    // Виведення ключа у консоль
+    console.log(key);
+  }
+
   // Використовуємо методу values для отримання ітератора значень
+  const values = set.values();
+  console.log("Values:");
   // Використовуємо for...of для кожного значення з ітератора values
-  // Виведення значення у консоль
+  for (let value of values) {
+    // Виведення значення у консоль
+    console.log(value);
+  }
+
   // Використовуємо методу entries для отримання ітератора записів
+  const entries = set.entries();
+  console.log("Entries:");
   // Використовуємо for...of для кожного запису з ітератора entries
-  // Виведення запису у консоль
+  for (let entry of entries) {
+    // Виведення запису у консоль
+    console.log(entry);
+  }
 }
 
 // Приклад використання функції iterateSet
@@ -310,11 +327,18 @@ iterateSet(new Set(["a", "b", "c"]));
  * Повертаємо - Суму числових елементів у множині.
  */
 function sumNumbers(set) {
+  let sum = 0;
   // Використання методу forEach для перебору елементів множини
-  // Перевірка, чи є елемент числом
-  // Додавання числового елемента до суми
+  set.forEach((element) => {
+    // Перевірка, чи є елемент числом
+    if (typeof element === "number") {
+      // Додавання числового елемента до суми
+      sum += element;
+    }
+  });
+
   // Повертаємо суму
-  // return sum;
+  return sum;
 }
 
 // Приклад використання функції sumNumbers
